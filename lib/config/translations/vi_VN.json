@@ -1,0 +1,66 @@
+{
+  "sen_company": {
+    "name_developers": "Nhà phát triển: Công ty Cổ phần Sáng Tạo SEN",
+    "sen": "SEN"
+  },
+  "datetime": {
+    "day": "Ngày",
+    "month": "Tháng",
+    "year": "Năm",
+    "hour": "Giờ",
+    "minute": "Phút",
+    "cancel": "Huỷ",
+    "select": "Chọn"
+  },
+  "buttons": {
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "register": "Đăng ký"
+  },
+  "authentication": {
+    "note_error_input_otp": "Yêu cầu cấp lại mã OTP",
+    "enter_telephone": "Nhập số điện thoại",
+    "enter_password": "Nhập mật khẩu",
+    "enter_otp": "Nhập mã OTP   Vui lòng chờ...",
+    "send_request_otp_code": "Gửi yêu cầu cấp mã OTP",
+    "reset_password": "Đặt lại mật khẩu",
+    "set_password": "Đặt mật khẩu",
+    "repeat_password": "Nhắc lại mật khẩu",
+    "continue": "Tiếp theo",
+    "register_login": "Đăng ký\nĐăng nhập",
+    "forgot_password": "Quên mật khẩu",
+    "info_register_account": "Thông tin đăng ký tài khoản",
+    "title_register_success": "Chúc mừng bạn đăng nhập\n thành công",
+    "put_your_name_in_sen_app": "Đặt tên của bạn trong SEN",
+    "enter_your_name": "NHẬP TÊN CỦA BẠN",
+    "note_represent_the_organization": "Nếu bạn đại diện cho tổ chức\nHãy bấm gửi yêu cầu để được cấp \ntài khoản cho tổ chức!",
+    "choose": "Chọn",
+    "choose_career": "Chọn nghề nghiệp",
+    "job": "Nghề nghiệp",
+    "choose_address": "Chọn địa điểm",
+    "choose_location_on_map": "Chọn vị trí trên bản đồ",
+    "choose_birthday": "Chọn ngày tháng năm sinh",
+    "policy": "Điều khoản sử dụng",
+    "please_confirm_policy": "Vui lòng đọc và xác nhận điều khoản trên",
+    "choose_language": "Chọn ngôn ngữ",
+    "tiengviet": "Tiếng Việt",
+    "english": "English",
+    "community": "Cộng đồng\nViệc làm",
+    "unlimited": "KHÔNG GIỚI HẠN",
+    "social_communication": "GIAO TIẾP XÃ HỘI",
+    "connecting_value": "KẾT NỐI GIÁ TRỊ"
+  },
+  "country_selection": {
+    "title": "Select Country",
+    "search": "Search..."
+  },
+  "network_error": {
+    "fetch_data": "Error During Communication",
+    "invalid_request": "Invalid Request",
+    "unauthorized": "Unauthorized",
+    "invalid_input": "Invalid Input",
+    "request_timeout": "Request Timeout",
+    "internal_server_error": "Internal Server Error",
+    "no_network_connection": "No Internet connection"
+  }
+}

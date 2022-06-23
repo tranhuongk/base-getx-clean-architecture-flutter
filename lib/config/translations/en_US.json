@@ -1,0 +1,34 @@
+{
+  "sen_company": {
+    "name_developers": "Nhà phát triển: Công ty Cổ phần Sáng Tạo SEN"
+  },
+  "buttons": {
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "register": "Đăng ký"
+  },
+  "authentication": {
+    "note_error_input_otp": "Yêu cầu cấp lại mã OTP",
+    "enter_telephone": "Nhập số điện thoại",
+    "enter_otp": "Nhập mã OTP   Vui lòng chờ...",
+    "send_request_otp_code": "Gửi yêu cầu cấp mã OTP",
+    "reset_password": "Đặt lại mật khẩu",
+    "set_password": "Đặt mật khẩu",
+    "repeat_password": "Nhắc lại mật khẩu",
+    "continue": "Tiếp theo",
+    "register_login": "Đăng ký\nĐăng nhập",
+    "forgot_password": "Quên mật khẩu",
+    "info_register_account": "Thông tin đăng ký tài khoản",
+    "title_register_success": "Chúc mừng bạn đăng nhập thành công",
+    "put_your_name_in_sen_app": "Đặt tên của bạn trong SEN",
+    "enter_your_name": "NHẬP TÊN CỦA BẠN",
+    "note_represent_the_organization": "Nếu bạn đại diện cho tổ chức\nHãy bấm gửi yêu cầu để được cấp \ntài khoản cho tổ chức!",
+    "choose": "Chọn",
+    "choose_career": "Chọn nghề nghiệp",
+    "choose_address": "Chọn địa điểm",
+    "choose_location_on_map": "Chọn vị trí trên bản đồ",
+    "choose_birthday": "Chọn ngày tháng năm sinh",
+    "policy": "Điều khoản sử dụng",
+    "please_confirm_policy": "Vui lòng đọc và xác nhận điều khoản trên"
+  }
+}
