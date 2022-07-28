@@ -5,9 +5,13 @@ import 'dart:io';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+import '../logger.dart';
+
 class UrlLauncherServices {
   UrlLauncherServices._();
 
+  static void launch(String? url) =>
+      url == null ? null : launchUrl(Uri.parse(url));
   static void call(String number) => launchUrl(Uri.parse('tel: $number'));
   static void sendMail(String email) => launchUrl(Uri.parse('mailto: $email'));
   static void sendViber(String phone) {
@@ -25,19 +29,13 @@ class UrlLauncherServices {
   }
 
   static void sendSMS(String phone) async {
-    var content = 'This is message';
+    var content = 'Sen app message';
     final messageUrl = 'sms:$phone?body=$content';
 
-    if (await canLaunchUrlString(messageUrl)) {
+    try {
       await launchUrlString(messageUrl);
-    } else {
-      // iOS
-      var uri = 'sms:$phone?body=$content';
-      if (await canLaunchUrlString(uri)) {
-        await launchUrlString(uri);
-      } else {
-        throw 'Could not launch $uri';
-      }
+    } catch (e) {
+      logger.d(e);
     }
   }
 

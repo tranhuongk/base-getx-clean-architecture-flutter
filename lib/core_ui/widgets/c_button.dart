@@ -1,9 +1,9 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/cupertino.dart';
-import 'dart:ui' as ui;
 import '../themes/c_colors.dart';
 import '../themes/c_text_styles.dart';
+import 'c_jumping_dots.dart';
 import 'c_widget.dart';
 
 class CButton extends StatelessWidget {
@@ -26,6 +26,8 @@ class CButton extends StatelessWidget {
   final bool isCanvas;
   final MainAxisAlignment mainAxisAlignment;
   final bool isOnlyIcon;
+  final bool isLoading;
+  final Color loadingColor;
 
   const CButton({
     Key? key,
@@ -48,56 +50,43 @@ class CButton extends StatelessWidget {
     this.isCanvas = false,
     this.isOnlyIcon = false,
     this.mainAxisAlignment = MainAxisAlignment.center,
+    this.isLoading = false,
+    this.loadingColor = CColors.whiteColor,
   }) : super(key: key);
 
   factory CButton.base(
     String text, {
-    double? width = 160,
-    double? height = 50,
+    double? width = double.infinity,
+    double? height = 56,
     VoidCallback? onTap,
     BorderRadius? borderRadius,
     EdgeInsets? margin,
+    EdgeInsets? padding,
     Color? backgroundColor,
     Color? color,
-    BoxShadow? boxShadow,
-    Border? border,
+    Widget? prefixWidget,
+    Widget? suffixWidget,
+    double space = 8,
+    TextStyle? textStyle,
+    bool isLoading = false,
+    Color loadingColor = CColors.whiteColor,
   }) =>
       CButton(
         text: text,
         width: width,
         height: height,
         onTap: onTap,
-        borderRadius: borderRadius ?? BorderRadius.circular(height ?? 0),
+        isLoading: isLoading,
+        borderRadius: borderRadius ?? BorderRadius.circular(6),
         color: color ?? CColors.mainColor,
-        textStyle: CTextStyles.base.w600(20),
+        textStyle: textStyle ?? CTextStyles.base.w600(20),
         margin: margin,
+        padding: padding,
         backgroundColor: backgroundColor,
-        boxShadow: boxShadow,
-        border: border ?? Border.all(color: CColors.buttonWColor),
-      );
-
-  factory CButton.canvas(
-    String text, {
-    double? width = 180,
-    double? height = 50,
-    VoidCallback? onTap,
-    EdgeInsets? margin,
-    Color? backgroundColor,
-    Color? color,
-    BoxShadow? boxShadow,
-  }) =>
-      CButton(
-        text: text,
-        width: width,
-        height: height,
-        onTap: onTap,
-        borderRadius: BorderRadius.zero,
-        color: color ?? CColors.transparentColor,
-        textStyle: CTextStyles.base.w600(20),
-        margin: margin,
-        backgroundColor: backgroundColor ?? CColors.transparentColor,
-        boxShadow: boxShadow,
-        isCanvas: true,
+        prefixWidget: prefixWidget,
+        suffixWidget: suffixWidget,
+        space: space,
+        loadingColor: loadingColor,
       );
 
   factory CButton.gradient(
@@ -111,6 +100,7 @@ class CButton extends StatelessWidget {
     BoxShadow? boxShadow,
     Border? border,
     Gradient? gradient,
+    bool isLoading = false,
   }) =>
       CButton(
         text: text,
@@ -124,6 +114,7 @@ class CButton extends StatelessWidget {
         backgroundColor: backgroundColor,
         boxShadow: boxShadow,
         border: border,
+        isLoading: isLoading,
         gradient: gradient ??
             const LinearGradient(
               colors: CColors.linerAuth,
@@ -138,16 +129,21 @@ class CButton extends StatelessWidget {
     double radius = 0,
     double? width,
     double? height,
+    EdgeInsets? margin,
+    EdgeInsets? padding,
+    Color? color,
+    Color? backgroundColor,
   }) =>
       CButton(
         text: "",
         width: width,
         height: height,
         onTap: onTap,
+        margin: margin,
+        padding: padding,
         borderRadius: BorderRadius.circular(radius),
-        color: CColors.transparentColor,
-        backgroundColor: CColors.transparentColor,
-        textStyle: CTextStyles.base.w600(20),
+        color: color ?? CColors.transparentColor,
+        backgroundColor: backgroundColor ?? CColors.transparentColor,
         space: 0,
         prefixWidget: child,
         isOnlyIcon: true,
@@ -155,22 +151,25 @@ class CButton extends StatelessWidget {
 
   factory CButton.icon(
     Widget icon, {
-    double? width = 50,
-    double? height = 50,
+    double? width,
+    double? height,
     VoidCallback? onTap,
     BorderRadius? borderRadius,
     EdgeInsets? margin,
     Color? backgroundColor,
+    Color? color,
     BoxShadow? boxShadow,
     Border? border,
+    EdgeInsets? padding,
   }) =>
       CButton(
         text: "",
         width: width,
         height: height,
         onTap: onTap,
-        borderRadius: borderRadius ?? BorderRadius.circular(height ?? 0),
-        color: CColors.mainColor,
+        padding: padding,
+        borderRadius: borderRadius ?? BorderRadius.circular(6),
+        color: color ?? CColors.mainColor,
         textStyle: CTextStyles.base.w600(20),
         margin: margin,
         backgroundColor: backgroundColor,
@@ -181,175 +180,89 @@ class CButton extends StatelessWidget {
         isOnlyIcon: true,
       );
 
-  factory CButton.defaultBtn(
-    String text, {
-    double? width = 160,
-    double? height = 50,
-    VoidCallback? onTap,
-    BorderRadius borderRadius = const BorderRadius.only(
-      topLeft: Radius.circular(24),
-    ),
-    EdgeInsets? margin,
-    Color? backgroundColor,
-    BoxShadow? boxShadow,
-  }) =>
-      CButton(
-        text: text,
-        width: width,
-        height: height,
-        onTap: onTap,
-        borderRadius: borderRadius,
-        color: CColors.mainColor,
-        textStyle: CTextStyles.base.w600(20),
-        margin: margin,
-        backgroundColor: backgroundColor,
-        boxShadow: boxShadow,
-      );
-
-  factory CButton.availableBtn(
-    String text, {
-    double? width = 180,
-    double? height = 50,
-    VoidCallback? onTap,
-    BorderRadius borderRadius = const BorderRadius.only(
-      topLeft: Radius.circular(24),
-    ),
-    EdgeInsets? margin,
-    Color? backgroundColor,
-    BoxShadow? boxShadow,
-  }) =>
-      CButton(
-        text: text,
-        width: width,
-        height: height,
-        onTap: onTap,
-        borderRadius: borderRadius,
-        color: CColors.mainLightColor,
-        textStyle: CTextStyles.base.w600(20),
-        margin: margin,
-        backgroundColor: backgroundColor,
-        boxShadow: boxShadow ??
-            BoxShadow(
-              offset: const Offset(-2, -2),
-              blurRadius: 4,
-              color: CColors.blackColor.withOpacity(0.25),
-            ),
-      );
-
   @override
   Widget build(BuildContext context) {
-    final _child = isOnlyIcon
-        ? prefixWidget
-        : Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: mainAxisAlignment,
-            children: [
-              if (prefixWidget != null)
-                Padding(
-                  padding: EdgeInsets.only(right: space),
-                  child: prefixWidget,
-                ),
-              Flexible(
-                child: CText(
-                  text,
-                  style: textStyle,
-                ),
-              ),
-              if (suffixWidget != null)
-                Padding(
-                  padding: EdgeInsets.only(left: space),
-                  child: suffixWidget,
-                ),
-            ],
-          );
-    return ClipRRect(
-      borderRadius: borderRadius,
-      child: Opacity(
-        opacity: onTap == null ? 0.7 : 1,
-        child: ColoredBox(
-          color: backgroundColor ?? CColors.transparentColor,
-          child: CupertinoButton(
-            onPressed: onTap,
-            color: color,
-            minSize: 0,
-            padding: EdgeInsets.zero,
-            borderRadius: borderRadius,
-            disabledColor: color,
-            child: isCanvas
-                ? Container(
-                    width: width,
-                    height: height,
-                    margin: margin,
-                    child: CustomPaint(
-                      size: Size(
-                        // 100,
-                        // 20,
-                        width ?? 180,
-                        ((width ?? 180) * 0.31216931216931215).toDouble(),
-                      ),
-                      painter: RPSCustomPainter(),
-                      child: _child,
+    var _child = isLoading
+        ? JumpingDots(
+            color: loadingColor,
+            animationDuration: const Duration(milliseconds: 300),
+            radius: 6,
+            innerPadding: 3,
+          )
+        : isOnlyIcon
+            ? prefixWidget
+            : Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: mainAxisAlignment,
+                children: [
+                  if (prefixWidget != null)
+                    Padding(
+                      padding: EdgeInsets.only(right: space),
+                      child: prefixWidget,
                     ),
-                  )
-                : Container(
-                    width: width,
-                    height: height,
-                    margin: margin,
-                    padding: padding,
-                    decoration: BoxDecoration(
-                      borderRadius: borderRadius,
-                      border: border,
-                      boxShadow: boxShadow != null ? [boxShadow!] : null,
-                      gradient: gradient,
+                  Flexible(
+                    child: CText(
+                      text,
+                      style: textStyle,
                     ),
-                    child: _child,
                   ),
+                  if (suffixWidget != null)
+                    Padding(
+                      padding: EdgeInsets.only(left: space),
+                      child: suffixWidget,
+                    ),
+                ],
+              );
+    return Padding(
+      padding: margin ?? EdgeInsets.zero,
+      child: ClipRRect(
+        borderRadius: borderRadius,
+        child: Opacity(
+          opacity: onTap == null ? 0.7 : 1,
+          child: ColoredBox(
+            color: backgroundColor ?? CColors.transparentColor,
+            child: CupertinoButton(
+              onPressed: isLoading ? null : onTap,
+              color: color,
+              minSize: 0,
+              padding: EdgeInsets.zero,
+              borderRadius: borderRadius,
+              disabledColor: color,
+              child:
+                  // isCanvas
+                  //     ? Container(
+                  //         width: width,
+                  //         height: height,
+                  //         margin: margin,
+                  //         child: CustomPaint(
+                  //           size: Size(
+                  //             // 100,
+                  //             // 20,
+                  //             width ?? 180,
+                  //             ((width ?? 180) * 0.31216931216931215).toDouble(),
+                  //           ),
+                  //           painter: RPSCustomPainter(),
+                  //           child: _child,
+                  //         ),
+                  //       )
+                  //     :
+                  Container(
+                width: width,
+                height: height,
+                padding: padding,
+                decoration: BoxDecoration(
+                  borderRadius: borderRadius,
+                  border: border,
+                  boxShadow: boxShadow != null ? [boxShadow!] : null,
+                  gradient: gradient,
+                ),
+                child: _child,
+              ),
+            ),
           ),
         ),
       ),
     );
-  }
-}
-
-class RPSCustomPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Path path_0 = Path();
-    path_0.moveTo(size.width, size.height * 0.008);
-    path_0.lineTo(size.width * 0.002, size.height * 0.008);
-    path_0.lineTo(size.width * 0.002, size.height);
-    path_0.lineTo(size.width, size.height);
-    path_0.lineTo(size.width, size.height * 0.4);
-    path_0.lineTo(size.width * 0.88, size.height * 0.008);
-    path_0.close();
-
-    Paint paint0Fill = Paint()..style = PaintingStyle.fill;
-    paint0Fill.color = CColors.mainColor;
-    canvas.drawPath(path_0, paint0Fill);
-
-    Path path_1 = Path();
-    path_1.moveTo(size.width * 0.88, size.height * 0.4);
-    path_1.lineTo(size.width * 0.88, size.height * 0.008);
-    path_1.lineTo(size.width, size.height * 0.4);
-    path_1.lineTo(size.width * 0.88, size.height * 0.4);
-    path_1.close();
-
-    Paint paint1Fill = Paint()..style = PaintingStyle.fill;
-    paint1Fill.shader = ui.Gradient.linear(
-        Offset(size.width * 0.95, size.height * 0.2),
-        Offset(size.width * 0.88, size.height * 0.4), [
-      const Color(0xff736759),
-      const Color(0xffFFB802),
-    ], [
-      0,
-      1
-    ]);
-    canvas.drawPath(path_1, paint1Fill);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
   }
 }

@@ -5,7 +5,7 @@ import '../themes/c_colors.dart';
 class CContainer extends StatelessWidget {
   final Color? color;
   final Gradient? gradient;
-  final BorderRadiusGeometry? borderRadius;
+  final BorderRadius? borderRadius;
   final BoxConstraints? constraints;
   final BoxShadow? boxShadow;
   final Color borderColor;
@@ -16,6 +16,7 @@ class CContainer extends StatelessWidget {
   final EdgeInsets? padding;
   final EdgeInsets? margin;
   final VoidCallback? onTap;
+  final BoxBorder? border;
 
   const CContainer({
     Key? key,
@@ -32,6 +33,7 @@ class CContainer extends StatelessWidget {
     this.onTap,
     this.padding,
     this.margin,
+    this.border,
   }) : super(key: key);
 
   @override
@@ -40,7 +42,6 @@ class CContainer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: margin,
-        padding: padding,
         width: width,
         height: height,
         constraints: constraints,
@@ -49,13 +50,20 @@ class CContainer extends StatelessWidget {
           borderRadius: borderRadius,
           gradient: gradient,
           boxShadow: boxShadow != null ? [boxShadow!] : null,
-          border: Border.all(
-            color: borderColor,
-            width: borderWidth,
-            style: borderWidth > 0 ? BorderStyle.solid : BorderStyle.none,
+          border: border ??
+              Border.all(
+                color: borderColor,
+                width: borderWidth,
+                style: borderWidth > 0 ? BorderStyle.solid : BorderStyle.none,
+              ),
+        ),
+        child: ClipRRect(
+          borderRadius: borderRadius ?? BorderRadius.zero,
+          child: Padding(
+            padding: padding ?? EdgeInsets.zero,
+            child: child,
           ),
         ),
-        child: child,
       ),
     );
   }

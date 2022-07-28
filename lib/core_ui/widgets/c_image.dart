@@ -1,10 +1,10 @@
 import 'dart:io';
 
+import 'package:base_app_flutter/generated/assets.gen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../generated/assets.gen.dart';
 import '../themes/c_colors.dart';
 
 ///
@@ -34,6 +34,7 @@ class CImage extends StatelessWidget {
     this.fit = BoxFit.contain,
   })  : assert(
             (asset != null && asset is AssetGenImage || asset is SvgGenImage) ||
+                // asset is AssetEntity) ||
                 url != null),
         assert(!(asset != null && url != null)),
         super(key: key);
@@ -92,6 +93,13 @@ class CImage extends StatelessWidget {
         fit: fit,
       );
     }
+    // else if (asset is AssetEntity) {
+    //   _image = AssetEntityImage(
+    //     asset,
+    //     color: color,
+    //     fit: fit,
+    //   );
+    // }
 
     return GestureDetector(
       onTap: onTap,

@@ -32,6 +32,9 @@ dependencies:
   connectivity: ^3.0.6
   tiengviet: ^0.5.0
   equatable: ^2.0.3
+  pull_to_refresh: ^2.0.0
+  outline_gradient_button: ^2.0.0+1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

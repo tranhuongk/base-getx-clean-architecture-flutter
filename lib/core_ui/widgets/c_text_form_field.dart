@@ -1,9 +1,7 @@
+import 'package:base_app_flutter/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import '../../common/country_code/country_code.dart';
-import '../../common/country_code/country_code_picker.dart';
 import '../../generated/assets.gen.dart';
 import '../themes/c_colors.dart';
 import '../themes/c_text_styles.dart';
@@ -17,10 +15,16 @@ class CTextFormField extends StatefulWidget {
   final double? width;
   final double? height;
   final Color? backgroundColor;
+  final Color? borderColor;
+  final Color? borderColorActive;
   final BorderRadius borderRadius;
   final TextAlign? textAlign;
   final VoidCallback? onTap;
   final TextStyle? hintStyle;
+  final TextStyle? style;
+  final BoxShadow? boxShadow;
+  final EdgeInsets? padding;
+  final TextInputAction? textInputAction;
 
   /// return value of obscureText
   final Widget Function(bool)? prefixWidget;
@@ -52,6 +56,7 @@ class CTextFormField extends StatefulWidget {
     this.borderRadius = BorderRadius.zero,
     this.textAlign,
     this.hintStyle,
+    this.style,
     this.prefixWidget,
     this.suffixWidget,
     this.enabled,
@@ -65,84 +70,91 @@ class CTextFormField extends StatefulWidget {
     this.onChanged,
     this.onEditingComplete,
     this.onFieldSubmitted,
+    this.borderColor,
+    this.borderColorActive = CColors.mainColor,
+    this.boxShadow,
+    this.padding,
+    this.textInputAction,
   }) : super(key: key);
 
-  factory CTextFormField.telephone(
+  factory CTextFormField.text(
     String hintText, {
     double? width,
     double? height,
     TextEditingController? controller,
     BorderRadius? borderRadius,
     EdgeInsets? margin,
-    Color? backgroundColor = CColors.grey40Color,
+    Color? backgroundColor,
     BoxShadow? boxShadow,
     TextStyle? hintStyle,
+    TextStyle? style,
     Widget? prefixWidget,
     TextAlign? textAlign,
-    Function(CountryCode)? onCountryCodeChanged,
+    FocusNode? focusNode,
+    int? maxLines,
   }) =>
       CTextFormField(
-        height: 50,
+        height: 56,
         width: width,
-        backgroundColor: backgroundColor,
-        hintText: hintText.tr,
-        borderRadius: BorderRadius.circular(25),
-        textAlign: textAlign,
+        backgroundColor: backgroundColor ?? CColors.mainColor,
+        hintText: hintText,
+        focusNode: focusNode,
+        borderRadius: BorderRadius.circular(6),
+        textAlign: textAlign ?? TextAlign.left,
         controller: controller,
         hintStyle: hintStyle,
-        prefixWidget: (val) => Row(
-          children: [
-            CountryCodePicker(
-              onChanged: onCountryCodeChanged,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-            ),
-            Container(
-              width: 1,
-              height: 30,
-              color: CColors.grey55Color,
-            ),
-          ],
+        style: style,
+        maxLines: maxLines,
+      );
+
+  factory CTextFormField.search({
+    String hintText = LocaleKeys.country_selection_search,
+    double? width,
+    double? height = 40,
+    TextEditingController? controller,
+    BorderRadius? borderRadius,
+    EdgeInsets? margin,
+    Function(String)? onChanged,
+  }) =>
+      CTextFormField(
+        height: height,
+        width: width,
+        backgroundColor: CColors.whiteColor,
+        borderColor: CColors.mainColor,
+        hintText: hintText,
+        borderRadius: BorderRadius.circular(6),
+        textAlign: TextAlign.left,
+        controller: controller,
+        hintStyle: CTextStyles.base.mainColor.s14,
+        style: CTextStyles.base.blackColor.s14,
+        onChanged: onChanged,
+        prefixWidget: (val) => Padding(
+          padding: const EdgeInsets.only(left: 14),
+          child: Assets.icons.icSearch.image(width: 14),
         ),
+        padding: const EdgeInsets.symmetric(horizontal: 14),
       );
 
   factory CTextFormField.password(
     String hintText, {
-    double? width,
-    double? height,
     TextEditingController? controller,
-    Color? backgroundColor,
-    TextStyle? hintStyle,
-    Widget? prefixWidget,
-    TextAlign? textAlign,
-    bool obscureText = true,
   }) =>
       CTextFormField(
-        height: 50,
-        width: width,
-        obscureText: obscureText,
-        backgroundColor: backgroundColor ?? CColors.whiteColor,
-        hintText: hintText.tr,
-        borderRadius: BorderRadius.circular(25),
-        textAlign: textAlign,
+        height: 56,
+        backgroundColor: CColors.mainColor,
+        hintText: hintText,
+        borderRadius: BorderRadius.circular(6),
+        textAlign: TextAlign.left,
         controller: controller,
-        hintStyle: hintStyle,
-        prefixChangeObscureText: true,
-        prefixWidget: (val) => Row(
-          children: [
-            CContainer(
-              padding: const EdgeInsets.only(left: 20, right: 31),
-              child: CImage(
-                asset: val ? Assets.icons.icHideEye : Assets.icons.icEye,
-                width: 24,
-                color: CColors.blackColor,
-              ),
-            ),
-            Container(
-              width: 1,
-              height: 30,
-              color: CColors.grey55Color,
-            ),
-          ],
+        obscureText: true,
+        suffixChangeObscureText: true,
+        suffixWidget: (val) => CContainer(
+          padding: const EdgeInsets.only(right: 16),
+          child: CImage(
+            asset: val ? Assets.icons.icHideEye : Assets.icons.icEye,
+            width: 24,
+            color: CColors.whiteColor,
+          ),
         ),
       );
 
@@ -152,12 +164,28 @@ class CTextFormField extends StatefulWidget {
 
 class _CTextFormFieldState extends State<CTextFormField> {
   bool _obscureText = false;
+  Color? _borderColor;
+  FocusNode _focusNode = FocusNode();
 
   @override
   void initState() {
     if (widget.obscureText != null) {
       _obscureText = widget.obscureText!;
     }
+    if (widget.focusNode != null) {
+      _focusNode = widget.focusNode!;
+    }
+
+    _focusNode.addListener(() {
+      setState(() {
+        if (_focusNode.hasFocus) {
+          _borderColor = widget.borderColorActive;
+        } else {
+          _borderColor = widget.borderColor;
+        }
+      });
+    });
+
     super.initState();
   }
 
@@ -167,10 +195,13 @@ class _CTextFormFieldState extends State<CTextFormField> {
       borderRadius: widget.borderRadius,
       child: CContainer(
         color: widget.backgroundColor,
-        borderColor: widget.backgroundColor ?? CColors.transparentColor,
+        borderColor: _borderColor ?? CColors.transparentColor,
         borderRadius: widget.borderRadius,
+        borderWidth: 1,
         width: widget.width ?? double.infinity,
         height: widget.height,
+        boxShadow: widget.boxShadow,
+        onTap: _focusNode.requestFocus,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -191,10 +222,11 @@ class _CTextFormFieldState extends State<CTextFormField> {
                 obscureText: _obscureText,
                 autovalidateMode: AutovalidateMode.always,
                 textAlign: widget.textAlign ?? TextAlign.center,
-                style: CTextStyles.base.blackColor,
+                style: widget.style ?? CTextStyles.base.whiteColor.s14,
                 autofocus: widget.autofocus,
+                textInputAction: widget.textInputAction,
                 enabled: widget.enabled,
-                focusNode: widget.focusNode,
+                focusNode: _focusNode,
                 inputFormatters: widget.inputFormatters,
                 keyboardType: widget.keyboardType,
                 maxLines: widget.maxLines,
@@ -209,12 +241,14 @@ class _CTextFormFieldState extends State<CTextFormField> {
                   widget.focusNode?.nextFocus();
                 },
                 decoration: InputDecoration(
-                  hintText: widget.hintText,
-                  hintStyle: widget.hintStyle ?? CTextStyles.base.grey70Color,
+                  hintText: widget.hintText?.tr,
+                  hintStyle: widget.hintStyle ?? CTextStyles.base.mainColor.s14,
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                  contentPadding: widget.padding ??
+                      const EdgeInsets.symmetric(horizontal: 16),
+                  isDense: true,
                 ),
               ),
             ),

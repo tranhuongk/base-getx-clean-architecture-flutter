@@ -41,9 +41,6 @@ class SenJobApp extends StatelessWidget {
         locale: HiveServices.languageCode,
         translationsKeys: AppTranslation.translations,
         debugShowCheckedModeBanner: false,
-        // localizationsDelegates: const [
-        //   CustomCupertinoLocalizations.delegate,
-        // ],
       ),
     );
   }

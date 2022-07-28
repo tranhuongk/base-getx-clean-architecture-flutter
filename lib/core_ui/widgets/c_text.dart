@@ -8,7 +8,7 @@ class CText extends StatelessWidget {
   final GestureTapCallback? onTap;
   final String? text;
   final EdgeInsets padding;
-  final TextStyle style;
+  final TextStyle? style;
   final TextAlign? textAlign;
   final TextOverflow? textOverflow;
   final int? maxLines;
@@ -17,7 +17,7 @@ class CText extends StatelessWidget {
   const CText(
     this.text, {
     Key? key,
-    this.textOverflow = TextOverflow.ellipsis,
+    this.textOverflow,
     this.padding = EdgeInsets.zero,
     this.style = CTextStyles.base,
     this.textAlign = TextAlign.left,
@@ -32,7 +32,7 @@ class CText extends StatelessWidget {
     final _text = Text(
       (text ?? '').tr,
       textAlign: textAlign,
-      style: style.copyWith(
+      style: style?.copyWith(
         foreground: gradient != null
             ? (Paint()
               ..shader = gradient?.createShader(
