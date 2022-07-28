@@ -1,21 +1,29 @@
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:base_app_flutter/app/data/providers/local_data/auth_local.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
-import '../../app/domain/entities/user_entity.dart';
 
 class HiveServices {
   HiveServices._();
-  static const String _boxName = "sen_hive_box";
-  static const String _userKey = "store_user_key";
-
+  static const String _boxName = "hive_box";
+  static const String _localeKey = "store_locale_key";
   static late final Box hiveBox;
-
-  static final Rx<UserEntity> user = UserEntity().obs;
 
   static Future init() async {
     await Hive.initFlutter();
-
+    await AuthLocal.init();
     hiveBox = await Hive.openBox(_boxName);
-    hiveBox.listenable(keys: [_userKey]).addListener(() {});
+  }
+
+  /// Store locale
+  static Locale get languageCode => Locale(
+        hiveBox.get(
+          _localeKey,
+          defaultValue: "vi",
+        ),
+      );
+  static Future<void> setLanguageCode(Locale locale) {
+    Get.updateLocale(locale);
+    return hiveBox.put(_localeKey, locale.languageCode);
   }
 }

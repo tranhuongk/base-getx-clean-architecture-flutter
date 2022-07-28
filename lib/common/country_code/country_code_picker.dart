@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core_ui/themes/c_colors.dart';
 import '../../core_ui/themes/c_text_styles.dart';
-import '../../core_ui/widgets/c_dialog.dart';
 import '../../core_ui/widgets/c_widget.dart';
 import '../../generated/assets.gen.dart';
-import 'country_code.dart';
 import 'country_codes.dart';
 import 'selection_dialog.dart';
 export 'country_code.dart';
@@ -87,7 +85,7 @@ class CountryCodePickerState extends State<CountryCodePicker>
   }
 
   void showCountryCodePickerDialog() {
-    CShowDialog(
+    cShowDialog(
       height: 350,
       width: 187,
       transition: DialogTransition.fromLeft,

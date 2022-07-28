@@ -1,12 +1,9 @@
 import 'dart:developer';
 
+import 'package:base_app_flutter/common/local/hive_services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-
-import 'app/data/providers/local_data/auth_local.dart';
-import 'app/presentation/widgets/c_cupertino_localizations.dart';
 import 'common/common.dart';
 import 'config/routes/app_pages.dart';
 import 'generated/locales.g.dart';
@@ -22,7 +19,6 @@ class SenJobApp extends StatelessWidget {
       // Dismiss keyboard when clicked outside
       onTap: Common.dismissKeyboard,
       child: GetMaterialApp(
-        builder: EasyLoading.init(),
         // builder: (context, child) => ResponsiveWrapper.builder(
         //   child,
         //   defaultScaleFactor: 1.2,
@@ -42,7 +38,7 @@ class SenJobApp extends StatelessWidget {
         initialRoute: AppRoutes.login,
         // theme: AppThemes.themData,
         getPages: AppPages.pages,
-        locale: AuthLocal.languageCode,
+        locale: HiveServices.languageCode,
         translationsKeys: AppTranslation.translations,
         debugShowCheckedModeBanner: false,
         // localizationsDelegates: const [

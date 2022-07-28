@@ -33,7 +33,7 @@ mixin DateTimePicker on DialogsMixin {
     }
     DateTime _choosedDateTime = initialDateTime ?? DateTime.now();
     bool _isTime = mode == DateTimePickerMode.time;
-    CShowDialog(
+    cShowDialog(
       margin: EdgeInsets.symmetric(horizontal: _isTime ? 80 : 30),
       child: Column(
         children: [

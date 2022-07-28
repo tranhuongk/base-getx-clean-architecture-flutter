@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import '../../generated/locales.g.dart';
 import '../logger.dart';
@@ -53,10 +52,6 @@ class APIProvider {
     logger.i(_baseResponse.toJson());
 
     if (_baseResponse.success ?? false) {
-      if (_message?.isNotEmpty ?? false) {
-        EasyLoading.dismiss();
-        EasyLoading.showSuccess(_message!);
-      }
       return _baseResponse.data;
     }
 

@@ -19,7 +19,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
 
-  flutter_easyloading: ^3.0.5
   url_launcher: ^6.1.2
 
   flutter_svg: ^1.0.3
@@ -27,6 +26,7 @@ dependencies:
 
   hive: ^2.2.1
   hive_flutter: ^1.1.0
+  
   logger: ^1.1.0
   dartz: ^0.10.1
   connectivity: ^3.0.6
