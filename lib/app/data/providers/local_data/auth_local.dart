@@ -6,6 +6,7 @@ import '../../../../common/local/hive_services.dart';
 
 class AuthLocal {
   static const String _tokenKey = "store_token_key";
+  static const String _rfTokenKey = "store_rf_token_key";
   static const String _userKey = "store_user_key";
   static Box get hiveBox => HiveServices.hiveBox;
   static final Rx<UserModel> user = (const UserModel()).obs;
@@ -31,6 +32,11 @@ class AuthLocal {
   static String? get token => hiveBox.get(_tokenKey);
   static Future<void> setToken(String? token) => hiveBox.put(_tokenKey, token);
 
+  /// Store token
+  static String? get refreshToken => hiveBox.get(_rfTokenKey);
+  static Future<void> setRefreshToken(String? token) =>
+      hiveBox.put(_rfTokenKey, token);
+
   /// Store user
   static UserModel get usermodel =>
       UserModel.fromJson(hiveBox.get(_userKey, defaultValue: {}));
@@ -40,6 +46,7 @@ class AuthLocal {
   /// Clear all data
   static Future clearAllUserData() async {
     await hiveBox.put(_tokenKey, null);
+    await hiveBox.put(_rfTokenKey, null);
     await hiveBox.put(_userKey, null);
   }
 }

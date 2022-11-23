@@ -31,6 +31,9 @@ dependencies:
   pull_to_refresh: 2.0.0
   outline_gradient_button: 2.0.0+1
   intl: 0.17.0
+  dio: 4.0.6
+  path_provider: 2.0.11
+  permission_handler: 10.2.0
 
 dev_dependencies:
   flutter_test:

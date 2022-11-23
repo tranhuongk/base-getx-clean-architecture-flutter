@@ -15,7 +15,7 @@ class NetworkChecker {
   }
 
   static Future<bool> get isConnected async {
-    Connectivity().checkConnectivity().then(connectivityResult);
+    connectivityResult.value = await Connectivity().checkConnectivity();
     return (connectivityResult.value == ConnectivityResult.mobile ||
         connectivityResult.value == ConnectivityResult.wifi);
   }
