@@ -130,7 +130,10 @@ class CTextFormField extends StatefulWidget {
         onChanged: onChanged,
         prefixWidget: (val) => Padding(
           padding: const EdgeInsets.only(left: 14),
-          child: Assets.icons.icSearch.image(width: 14),
+          child: CImage(
+            // asset: Assets.icons.icSearch,
+            width: 14,
+          ),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 14),
       );
@@ -151,7 +154,7 @@ class CTextFormField extends StatefulWidget {
         suffixWidget: (val) => CContainer(
           padding: const EdgeInsets.only(right: 16),
           child: CImage(
-            asset: val ? Assets.icons.icHideEye : Assets.icons.icEye,
+            // asset: val ? Assets.icons.icHideEye : Assets.icons.icEye,
             width: 24,
             color: CColors.whiteColor,
           ),

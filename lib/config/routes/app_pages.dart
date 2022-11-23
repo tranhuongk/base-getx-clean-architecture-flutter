@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:base_app_flutter/app/presentation/pages/login/login_page.dart';
 import 'package:get/get.dart';
 
 import '../../app/presentation/controllers/login/login_binding.dart';
@@ -9,7 +9,7 @@ class AppPages {
   static final pages = [
     GetPage(
       name: AppRoutes.login,
-      page: () => Container(),
+      page: () => const LoginPage(),
       binding: LoginBinding(),
     ),
   ];

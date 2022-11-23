@@ -11,12 +11,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
-class $LibGen {
-  const $LibGen();
-
-  $LibCommonGen get common => const $LibCommonGen();
-}
-
 class $AssetsFlagsGen {
   const $AssetsFlagsGen();
 
@@ -791,178 +785,284 @@ class $AssetsFlagsGen {
 
   /// File path: assets/flags/zw_fg.png
   AssetGenImage get zwFg => const AssetGenImage('assets/flags/zw_fg.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        adFg,
+        aeFg,
+        afFg,
+        agFg,
+        aiFg,
+        alFg,
+        amFg,
+        anFg,
+        aoFg,
+        aqFg,
+        arFg,
+        asFg,
+        atFg,
+        auFg,
+        awFg,
+        axFg,
+        azFg,
+        baFg,
+        bbFg,
+        bdFg,
+        beFg,
+        bfFg,
+        bgFg,
+        bhFg,
+        biFg,
+        bjFg,
+        blFg,
+        bmFg,
+        bnFg,
+        boFg,
+        bqFg,
+        brFg,
+        bsFg,
+        btFg,
+        bvFg,
+        bwFg,
+        byFg,
+        bzFg,
+        caFg,
+        ccFg,
+        cdFg,
+        cfFg,
+        cgFg,
+        chFg,
+        ciFg,
+        ckFg,
+        clFg,
+        cmFg,
+        cnFg,
+        coFg,
+        crFg,
+        cuFg,
+        cvFg,
+        cwFg,
+        cxFg,
+        cyFg,
+        czFg,
+        deFg,
+        djFg,
+        dkFg,
+        dmFg,
+        doFg,
+        dzFg,
+        ecFg,
+        eeFg,
+        egFg,
+        ehFg,
+        erFg,
+        esFg,
+        etFg,
+        euFg,
+        fiFg,
+        fjFg,
+        fkFg,
+        fmFg,
+        foFg,
+        frFg,
+        gaFg,
+        gbEngFg,
+        gbNirFg,
+        gbSctFg,
+        gbWlsFg,
+        gbFg,
+        gdFg,
+        geFg,
+        gfFg,
+        ggFg,
+        ghFg,
+        giFg,
+        glFg,
+        gmFg,
+        gnFg,
+        gpFg,
+        gqFg,
+        grFg,
+        gsFg,
+        gtFg,
+        guFg,
+        gwFg,
+        gyFg,
+        hkFg,
+        hmFg,
+        hnFg,
+        hrFg,
+        htFg,
+        huFg,
+        idFg,
+        ieFg,
+        ilFg,
+        imFg,
+        inFg,
+        ioFg,
+        iqFg,
+        irFg,
+        isFg,
+        itFg,
+        jeFg,
+        jmFg,
+        joFg,
+        jpFg,
+        keFg,
+        kgFg,
+        khFg,
+        kiFg,
+        kmFg,
+        knFg,
+        kpFg,
+        krFg,
+        kwFg,
+        kyFg,
+        kzFg,
+        laFg,
+        lbFg,
+        lcFg,
+        liFg,
+        lkFg,
+        lrFg,
+        lsFg,
+        ltFg,
+        luFg,
+        lvFg,
+        lyFg,
+        maFg,
+        mcFg,
+        mdFg,
+        meFg,
+        mfFg,
+        mgFg,
+        mhFg,
+        mkFg,
+        mlFg,
+        mmFg,
+        mnFg,
+        moFg,
+        mpFg,
+        mqFg,
+        mrFg,
+        msFg,
+        mtFg,
+        muFg,
+        mvFg,
+        mwFg,
+        mxFg,
+        myFg,
+        mzFg,
+        naFg,
+        ncFg,
+        neFg,
+        nfFg,
+        ngFg,
+        niFg,
+        nlFg,
+        noFg,
+        npFg,
+        nrFg,
+        nuFg,
+        nzFg,
+        omFg,
+        paFg,
+        peFg,
+        pfFg,
+        pgFg,
+        phFg,
+        pkFg,
+        plFg,
+        pmFg,
+        pnFg,
+        prFg,
+        psFg,
+        ptFg,
+        pwFg,
+        pyFg,
+        qaFg,
+        reFg,
+        roFg,
+        rsFg,
+        ruFg,
+        rwFg,
+        saFg,
+        sbFg,
+        scFg,
+        sdFg,
+        seFg,
+        sgFg,
+        shFg,
+        siFg,
+        sjFg,
+        skFg,
+        slFg,
+        smFg,
+        snFg,
+        soFg,
+        srFg,
+        ssFg,
+        stFg,
+        svFg,
+        sxFg,
+        syFg,
+        szFg,
+        tcFg,
+        tdFg,
+        tfFg,
+        tgFg,
+        thFg,
+        tjFg,
+        tkFg,
+        tlFg,
+        tmFg,
+        tnFg,
+        toFg,
+        trFg,
+        ttFg,
+        tvFg,
+        twFg,
+        tzFg,
+        uaFg,
+        ugFg,
+        umFg,
+        usFg,
+        uyFg,
+        uzFg,
+        vaFg,
+        vcFg,
+        veFg,
+        vgFg,
+        viFg,
+        vnFg,
+        vuFg,
+        wfFg,
+        wsFg,
+        xkFg,
+        yeFg,
+        ytFg,
+        zaFg,
+        zmFg,
+        zwFg
+      ];
 }
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/ic_account.png
-  AssetGenImage get icAccount =>
-      const AssetGenImage('assets/icons/ic_account.png');
-
-  /// File path: assets/icons/ic_add.png
-  AssetGenImage get icAdd => const AssetGenImage('assets/icons/ic_add.png');
-
-  /// File path: assets/icons/ic_arrow_down.png
-  AssetGenImage get icArrowDown =>
-      const AssetGenImage('assets/icons/ic_arrow_down.png');
-
-  /// File path: assets/icons/ic_arrow_right.png
-  AssetGenImage get icArrowRight =>
-      const AssetGenImage('assets/icons/ic_arrow_right.png');
-
-  /// File path: assets/icons/ic_bar_manager.png
-  AssetGenImage get icBarManager =>
-      const AssetGenImage('assets/icons/ic_bar_manager.png');
-
-  /// File path: assets/icons/ic_bar_message.png
-  AssetGenImage get icBarMessage =>
-      const AssetGenImage('assets/icons/ic_bar_message.png');
-
-  /// File path: assets/icons/ic_bell.png
-  AssetGenImage get icBell => const AssetGenImage('assets/icons/ic_bell.png');
-
-  /// File path: assets/icons/ic_bell_outline.png
-  AssetGenImage get icBellOutline =>
-      const AssetGenImage('assets/icons/ic_bell_outline.png');
-
-  /// File path: assets/icons/ic_calculator.png
-  AssetGenImage get icCalculator =>
-      const AssetGenImage('assets/icons/ic_calculator.png');
-
-  /// File path: assets/icons/ic_camera.png
-  AssetGenImage get icCamera =>
-      const AssetGenImage('assets/icons/ic_camera.png');
-
-  /// File path: assets/icons/ic_deal_job.png
-  AssetGenImage get icDealJob =>
-      const AssetGenImage('assets/icons/ic_deal_job.png');
-
-  /// File path: assets/icons/ic_distance.png
-  AssetGenImage get icDistance =>
-      const AssetGenImage('assets/icons/ic_distance.png');
-
-  /// File path: assets/icons/ic_document.png
-  AssetGenImage get icDocument =>
-      const AssetGenImage('assets/icons/ic_document.png');
-
-  /// File path: assets/icons/ic_dollar.png
-  AssetGenImage get icDollar =>
-      const AssetGenImage('assets/icons/ic_dollar.png');
-
-  /// File path: assets/icons/ic_eye.png
-  AssetGenImage get icEye => const AssetGenImage('assets/icons/ic_eye.png');
-
-  /// File path: assets/icons/ic_fees_pay.png
-  AssetGenImage get icFeesPay =>
-      const AssetGenImage('assets/icons/ic_fees_pay.png');
-
-  /// File path: assets/icons/ic_food.png
-  AssetGenImage get icFood => const AssetGenImage('assets/icons/ic_food.png');
-
-  /// File path: assets/icons/ic_hide_eye.png
-  AssetGenImage get icHideEye =>
-      const AssetGenImage('assets/icons/ic_hide_eye.png');
-
-  /// File path: assets/icons/ic_hor_stick.png
-  AssetGenImage get icHorStick =>
-      const AssetGenImage('assets/icons/ic_hor_stick.png');
-
-  /// File path: assets/icons/ic_invite_job.png
-  AssetGenImage get icInviteJob =>
-      const AssetGenImage('assets/icons/ic_invite_job.png');
-
-  /// File path: assets/icons/ic_invite_partner.png
-  AssetGenImage get icInvitePartner =>
-      const AssetGenImage('assets/icons/ic_invite_partner.png');
-
-  /// File path: assets/icons/ic_job.png
-  AssetGenImage get icJob => const AssetGenImage('assets/icons/ic_job.png');
-
-  /// File path: assets/icons/ic_location.png
-  AssetGenImage get icLocation =>
-      const AssetGenImage('assets/icons/ic_location.png');
-
-  /// File path: assets/icons/ic_location_fill.png
-  AssetGenImage get icLocationFill =>
-      const AssetGenImage('assets/icons/ic_location_fill.png');
-
-  /// File path: assets/icons/ic_location_outline.png
-  AssetGenImage get icLocationOutline =>
-      const AssetGenImage('assets/icons/ic_location_outline.png');
-
-  /// File path: assets/icons/ic_media_finish.png
-  AssetGenImage get icMediaFinish =>
-      const AssetGenImage('assets/icons/ic_media_finish.png');
-
-  /// File path: assets/icons/ic_media_play.png
-  AssetGenImage get icMediaPlay =>
-      const AssetGenImage('assets/icons/ic_media_play.png');
-
-  /// File path: assets/icons/ic_message.png
-  AssetGenImage get icMessage =>
-      const AssetGenImage('assets/icons/ic_message.png');
-
-  /// File path: assets/icons/ic_phone.png
-  AssetGenImage get icPhone => const AssetGenImage('assets/icons/ic_phone.png');
-
-  /// File path: assets/icons/ic_pick_location_fill.png
-  AssetGenImage get icPickLocationFill =>
-      const AssetGenImage('assets/icons/ic_pick_location_fill.png');
-
-  /// File path: assets/icons/ic_pick_location_outline.png
-  AssetGenImage get icPickLocationOutline =>
-      const AssetGenImage('assets/icons/ic_pick_location_outline.png');
-
-  /// File path: assets/icons/ic_price.png
-  AssetGenImage get icPrice => const AssetGenImage('assets/icons/ic_price.png');
-
-  /// File path: assets/icons/ic_search.png
-  AssetGenImage get icSearch =>
-      const AssetGenImage('assets/icons/ic_search.png');
-
-  /// File path: assets/icons/ic_service.png
-  AssetGenImage get icService =>
-      const AssetGenImage('assets/icons/ic_service.png');
-
-  /// File path: assets/icons/ic_sound.png
-  AssetGenImage get icSound => const AssetGenImage('assets/icons/ic_sound.png');
-
   /// File path: assets/icons/ic_star.png
-  AssetGenImage get icStar => const AssetGenImage('assets/icons/ic_star.png');
+  AssetGenImage get icStarPng =>
+      const AssetGenImage('assets/icons/ic_star.png');
 
-  /// File path: assets/icons/ic_stick.png
-  AssetGenImage get icStick => const AssetGenImage('assets/icons/ic_stick.png');
+  /// File path: assets/icons/ic_star.svg
+  SvgGenImage get icStarSvg => const SvgGenImage('assets/icons/ic_star.svg');
 
-  /// File path: assets/icons/ic_total.png
-  AssetGenImage get icTotal => const AssetGenImage('assets/icons/ic_total.png');
-
-  /// File path: assets/icons/ic_trolley.png
-  AssetGenImage get icTrolley =>
-      const AssetGenImage('assets/icons/ic_trolley.png');
-
-  /// File path: assets/icons/ic_truck.png
-  AssetGenImage get icTruck => const AssetGenImage('assets/icons/ic_truck.png');
-
-  /// File path: assets/icons/ic_ver_stick.png
-  AssetGenImage get icVerStick =>
-      const AssetGenImage('assets/icons/ic_ver_stick.png');
+  /// List of all assets
+  List<dynamic> get values => [icStarPng, icStarSvg];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
-
-  /// File path: assets/images/im_bg_header.png
-  AssetGenImage get imBgHeader =>
-      const AssetGenImage('assets/images/im_bg_header.png');
-
-  /// File path: assets/images/im_bg_header_expand.png
-  AssetGenImage get imBgHeaderExpand =>
-      const AssetGenImage('assets/images/im_bg_header_expand.png');
-
-  /// File path: assets/images/im_connect_value_header.png
-  AssetGenImage get imConnectValueHeader =>
-      const AssetGenImage('assets/images/im_connect_value_header.png');
 
   /// File path: assets/images/im_logo.png
   AssetGenImage get imLogo => const AssetGenImage('assets/images/im_logo.png');
@@ -971,244 +1071,8 @@ class $AssetsImagesGen {
   AssetGenImage get imNoImage =>
       const AssetGenImage('assets/images/im_no_image.png');
 
-  /// File path: assets/images/im_pillar.png
-  AssetGenImage get imPillarPng =>
-      const AssetGenImage('assets/images/im_pillar.png');
-
-  /// File path: assets/images/im_pillar.svg
-  SvgGenImage get imPillarSvg =>
-      const SvgGenImage('assets/images/im_pillar.svg');
-
-  /// File path: assets/images/im_sen_text.png
-  AssetGenImage get imSenText =>
-      const AssetGenImage('assets/images/im_sen_text.png');
-
-  /// File path: assets/images/im_social_communication_header.png
-  AssetGenImage get imSocialCommunicationHeader =>
-      const AssetGenImage('assets/images/im_social_communication_header.png');
-}
-
-class $LibCommonGen {
-  const $LibCommonGen();
-
-  $LibCommonCountryCodeGen get countryCode => const $LibCommonCountryCodeGen();
-}
-
-class $LibCommonCountryCodeGen {
-  const $LibCommonCountryCodeGen();
-
-  $LibCommonCountryCodeI18nGen get i18n => const $LibCommonCountryCodeI18nGen();
-}
-
-class $LibCommonCountryCodeI18nGen {
-  const $LibCommonCountryCodeI18nGen();
-
-  /// File path: lib/common/country_code/i18n/af_i18n.json
-  String get afI18n => 'lib/common/country_code/i18n/af_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/am_i18n.json
-  String get amI18n => 'lib/common/country_code/i18n/am_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ar_i18n.json
-  String get arI18n => 'lib/common/country_code/i18n/ar_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/az_i18n.json
-  String get azI18n => 'lib/common/country_code/i18n/az_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/be_i18n.json
-  String get beI18n => 'lib/common/country_code/i18n/be_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/bg_i18n.json
-  String get bgI18n => 'lib/common/country_code/i18n/bg_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/bn_i18n.json
-  String get bnI18n => 'lib/common/country_code/i18n/bn_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/bs_i18n.json
-  String get bsI18n => 'lib/common/country_code/i18n/bs_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ca_i18n.json
-  String get caI18n => 'lib/common/country_code/i18n/ca_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/cs_i18n.json
-  String get csI18n => 'lib/common/country_code/i18n/cs_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/da_i18n.json
-  String get daI18n => 'lib/common/country_code/i18n/da_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/de_i18n.json
-  String get deI18n => 'lib/common/country_code/i18n/de_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/el_i18n.json
-  String get elI18n => 'lib/common/country_code/i18n/el_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/en_i18n.json
-  String get enI18n => 'lib/common/country_code/i18n/en_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/es_i18n.json
-  String get esI18n => 'lib/common/country_code/i18n/es_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/et_i18n.json
-  String get etI18n => 'lib/common/country_code/i18n/et_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/fa_i18n.json
-  String get faI18n => 'lib/common/country_code/i18n/fa_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/fi_i18n.json
-  String get fiI18n => 'lib/common/country_code/i18n/fi_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/fr_i18n.json
-  String get frI18n => 'lib/common/country_code/i18n/fr_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/gl_i18n.json
-  String get glI18n => 'lib/common/country_code/i18n/gl_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ha_i18n.json
-  String get haI18n => 'lib/common/country_code/i18n/ha_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/he_i18n.json
-  String get heI18n => 'lib/common/country_code/i18n/he_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/hi_i18n.json
-  String get hiI18n => 'lib/common/country_code/i18n/hi_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/hr_i18n.json
-  String get hrI18n => 'lib/common/country_code/i18n/hr_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/hu_i18n.json
-  String get huI18n => 'lib/common/country_code/i18n/hu_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/hy_i18n.json
-  String get hyI18n => 'lib/common/country_code/i18n/hy_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/id_i18n.json
-  String get idI18n => 'lib/common/country_code/i18n/id_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/is_i18n.json
-  String get isI18n => 'lib/common/country_code/i18n/is_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/it_i18n.json
-  String get itI18n => 'lib/common/country_code/i18n/it_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ja_i18n.json
-  String get jaI18n => 'lib/common/country_code/i18n/ja_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ka_i18n.json
-  String get kaI18n => 'lib/common/country_code/i18n/ka_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/kk_i18n.json
-  String get kkI18n => 'lib/common/country_code/i18n/kk_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/km_i18n.json
-  String get kmI18n => 'lib/common/country_code/i18n/km_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ko_i18n.json
-  String get koI18n => 'lib/common/country_code/i18n/ko_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ku_i18n.json
-  String get kuI18n => 'lib/common/country_code/i18n/ku_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ky_i18n.json
-  String get kyI18n => 'lib/common/country_code/i18n/ky_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/lt_i18n.json
-  String get ltI18n => 'lib/common/country_code/i18n/lt_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/lv_i18n.json
-  String get lvI18n => 'lib/common/country_code/i18n/lv_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/mk_i18n.json
-  String get mkI18n => 'lib/common/country_code/i18n/mk_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ml_i18n.json
-  String get mlI18n => 'lib/common/country_code/i18n/ml_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/mn_i18n.json
-  String get mnI18n => 'lib/common/country_code/i18n/mn_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ms_i18n.json
-  String get msI18n => 'lib/common/country_code/i18n/ms_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/nb_i18n.json
-  String get nbI18n => 'lib/common/country_code/i18n/nb_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/nl_i18n.json
-  String get nlI18n => 'lib/common/country_code/i18n/nl_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/nn_i18n.json
-  String get nnI18n => 'lib/common/country_code/i18n/nn_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/no_i18n.json
-  String get noI18n => 'lib/common/country_code/i18n/no_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/pl_i18n.json
-  String get plI18n => 'lib/common/country_code/i18n/pl_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ps_i18n.json
-  String get psI18n => 'lib/common/country_code/i18n/ps_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/pt_i18n.json
-  String get ptI18n => 'lib/common/country_code/i18n/pt_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ro_i18n.json
-  String get roI18n => 'lib/common/country_code/i18n/ro_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ru_i18n.json
-  String get ruI18n => 'lib/common/country_code/i18n/ru_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/sd_i18n.json
-  String get sdI18n => 'lib/common/country_code/i18n/sd_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/sk_i18n.json
-  String get skI18n => 'lib/common/country_code/i18n/sk_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/sl_i18n.json
-  String get slI18n => 'lib/common/country_code/i18n/sl_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/so_i18n.json
-  String get soI18n => 'lib/common/country_code/i18n/so_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/sq_i18n.json
-  String get sqI18n => 'lib/common/country_code/i18n/sq_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/sr_i18n.json
-  String get srI18n => 'lib/common/country_code/i18n/sr_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/sv_i18n.json
-  String get svI18n => 'lib/common/country_code/i18n/sv_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ta_i18n.json
-  String get taI18n => 'lib/common/country_code/i18n/ta_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/tg_i18n.json
-  String get tgI18n => 'lib/common/country_code/i18n/tg_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/th_i18n.json
-  String get thI18n => 'lib/common/country_code/i18n/th_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/tr_i18n.json
-  String get trI18n => 'lib/common/country_code/i18n/tr_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/tt_i18n.json
-  String get ttI18n => 'lib/common/country_code/i18n/tt_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ug_i18n.json
-  String get ugI18n => 'lib/common/country_code/i18n/ug_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/uk_i18n.json
-  String get ukI18n => 'lib/common/country_code/i18n/uk_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/ur_i18n.json
-  String get urI18n => 'lib/common/country_code/i18n/ur_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/uz_i18n.json
-  String get uzI18n => 'lib/common/country_code/i18n/uz_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/vi_i18n.json
-  String get viI18n => 'lib/common/country_code/i18n/vi_i18n.json';
-
-  /// File path: lib/common/country_code/i18n/zh_i18n.json
-  String get zhI18n => 'lib/common/country_code/i18n/zh_i18n.json';
+  /// List of all assets
+  List<AssetGenImage> get values => [imLogo, imNoImage];
 }
 
 class Assets {
@@ -1217,7 +1081,6 @@ class Assets {
   static const $AssetsFlagsGen flags = $AssetsFlagsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
-  static const $LibGen lib = $LibGen();
 }
 
 class AssetGenImage {
@@ -1277,6 +1140,8 @@ class AssetGenImage {
       cacheHeight: cacheHeight,
     );
   }
+
+  ImageProvider provider() => AssetImage(_assetName);
 
   String get path => _assetName;
 

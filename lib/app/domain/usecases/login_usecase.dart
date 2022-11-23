@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../common/network/api_error.dart';
-import '../repositories/login_repository.dart';
+import '../repositories/auth_repository.dart';
 
 class LoginUsecase {
-  final LoginRepository repository;
+  final AuthRepository repository;
   LoginUsecase(this.repository);
 
   Future<Either<APIErrors, Map<String, String>>> call({

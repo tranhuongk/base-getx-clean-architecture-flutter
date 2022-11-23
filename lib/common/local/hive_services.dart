@@ -11,8 +11,8 @@ class HiveServices {
 
   static Future init() async {
     await Hive.initFlutter();
-    await AuthLocal.init();
     hiveBox = await Hive.openBox(_boxName);
+    await AuthLocal.init();
   }
 
   /// Store locale

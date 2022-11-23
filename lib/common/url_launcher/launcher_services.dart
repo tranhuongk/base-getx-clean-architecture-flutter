@@ -2,6 +2,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -65,19 +66,47 @@ class UrlLauncherServices {
     }
   }
 
-  static Future<void> launchMapUrl(String address) async {
-    // String encodedAddress = Uri.encodeComponent(address);
+  static Future<bool> launchCoordinates(
+    double? latitude,
+    double? longitude,
+  ) async {
+    if (latitude == null || longitude == null) {
+      return false;
+    }
+    logger.d("Go to ($latitude; $longitude)");
+    Uri uri;
 
-    // String googleMapUrl = "google.navigation:q=$lat,$lng&mode=c";
-    // String appleMapUrl = "http://maps.apple.com/?q=$encodedAddress";
-    // if (Platform.isAndroid) {
-    //   try {
-    //     if (await canLaunchUrlString(googleMapUrl)) {
-    //       await launchUrlString(googleMapUrl);
-    //     }
-    //   } catch (error) {
-    //     throw("Cannot launch Google map");
-    //   }
-    // }
+    /// For web
+    if (kIsWeb) {
+      uri = Uri.https('www.google.com', '/maps/search/',
+          {'api': '1', 'query': '$latitude,$longitude'});
+
+      return await launchUrl(uri);
+    }
+
+    /// For mobile
+    var query = '$latitude,$longitude';
+    uri = Uri(scheme: 'geo', host: '0,0', queryParameters: {'q': query});
+    if (await canLaunchUrl(uri)) {
+      return await launchUrl(uri);
+    }
+
+    /// For only iOS
+    if (Platform.isIOS) {
+      var params = {'ll': '$latitude,$longitude'};
+      uri = Uri.https('maps.apple.com', '/', params);
+    }
+    if (await canLaunchUrl(uri)) {
+      return await launchUrl(uri);
+    }
+
+    /// For google maps
+    uri = Uri.https('www.google.com', '/maps/search/',
+        {'api': '1', 'query': '$latitude,$longitude'});
+    if (await canLaunchUrl(uri)) {
+      return await launchUrl(uri);
+    }
+
+    return false;
   }
 }

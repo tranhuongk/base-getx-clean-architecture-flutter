@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../app/data/repositories/login_repository_impl.dart';
+import '../app/data/repositories/auth_repository_impl.dart';
 import '../app/domain/usecases/login_usecase.dart';
 
 class InjectionContainer {
@@ -12,11 +12,11 @@ class InjectionContainer {
 
   static void login() {
     Get.lazyPut(
-      () => LoginRepositoryImpl(),
+      () => AuthRepositoryImpl(),
       fenix: true,
     );
     Get.lazyPut(
-      () => LoginUsecase(Get.find<LoginRepositoryImpl>()),
+      () => LoginUsecase(Get.find<AuthRepositoryImpl>()),
       fenix: true,
     );
   }

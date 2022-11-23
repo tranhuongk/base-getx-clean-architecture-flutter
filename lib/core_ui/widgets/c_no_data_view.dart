@@ -18,9 +18,9 @@ class CNoDataView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Assets.icons.icSearch.image(
-            width: 24,
-            color: CColors.buttonWColor,
+          const Icon(
+            CupertinoIcons.search,
+            size: 24,
           ),
           const SizedBox(
             height: 6,
