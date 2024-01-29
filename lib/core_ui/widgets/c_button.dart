@@ -1,10 +1,8 @@
-// ignore_for_file: sized_box_for_whitespace
-
 import 'package:flutter/cupertino.dart';
+import '../core_ui.dart';
 import '../themes/c_colors.dart';
 import '../themes/c_text_styles.dart';
 import 'c_jumping_dots.dart';
-import 'c_widget.dart';
 
 class CButton extends StatelessWidget {
   final double? width;
@@ -182,7 +180,7 @@ class CButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _child = isLoading
+    var child = isLoading
         ? JumpingDots(
             color: loadingColor,
             animationDuration: const Duration(milliseconds: 300),
@@ -217,7 +215,7 @@ class CButton extends StatelessWidget {
     return Padding(
       padding: margin ?? EdgeInsets.zero,
       child: ClipRRect(
-        borderRadius: borderRadius,
+        borderRadius: borderRadius ?? BorderRadius.zero,
         child: Opacity(
           opacity: onTap == null ? 0.7 : 1,
           child: ColoredBox(
@@ -257,7 +255,7 @@ class CButton extends StatelessWidget {
                   boxShadow: boxShadow != null ? [boxShadow!] : null,
                   gradient: gradient,
                 ),
-                child: _child,
+                child: child,
               ),
             ),
           ),

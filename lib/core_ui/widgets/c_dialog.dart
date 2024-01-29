@@ -1,10 +1,7 @@
-// ignore_for_file: non_constant_identifier_names
 import 'package:base_app_flutter/app/data/providers/local_data/auth_local.dart';
+import 'package:base_app_flutter/core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../themes/c_colors.dart';
-import 'c_widget.dart';
 
 enum DialogTransition { fromLeft, fromBottom, fromTop, fromRight }
 
@@ -24,19 +21,19 @@ mixin DialogsMixin {
     bool barrierDismissible = true,
     BoxShadow? boxShadow,
   }) async {
-    Offset? _initOffset;
+    Offset? initOffset;
     switch (transition) {
       case DialogTransition.fromLeft:
-        _initOffset = const Offset(-1, 0);
+        initOffset = const Offset(-1, 0);
         break;
       case DialogTransition.fromBottom:
-        _initOffset = const Offset(0, 1);
+        initOffset = const Offset(0, 1);
         break;
       case DialogTransition.fromTop:
-        _initOffset = const Offset(0, -1);
+        initOffset = const Offset(0, -1);
         break;
       case DialogTransition.fromRight:
-        _initOffset = const Offset(1, 0);
+        initOffset = const Offset(1, 0);
         break;
       default:
         break;
@@ -52,7 +49,7 @@ mixin DialogsMixin {
           : (context, anim1, anim2, child) {
               return SlideTransition(
                 position: Tween(
-                  begin: _initOffset,
+                  begin: initOffset,
                   end: const Offset(0, 0),
                 ).animate(anim1),
                 child: child,
@@ -67,6 +64,10 @@ mixin DialogsMixin {
               child: CContainer(
                 width: width,
                 height: height,
+                margin: margin,
+                borderRadius: borderRadius ?? BorderRadius.circular(12),
+                color: backgroundColor ?? CColors.whiteColor,
+                boxShadow: boxShadow,
                 child: ClipRRect(
                   borderRadius: borderRadius ?? BorderRadius.circular(12),
                   child: Container(
@@ -74,10 +75,6 @@ mixin DialogsMixin {
                     child: child,
                   ),
                 ),
-                margin: margin,
-                borderRadius: borderRadius ?? BorderRadius.circular(12),
-                color: backgroundColor ?? CColors.whiteColor,
-                boxShadow: boxShadow,
               ),
             ),
           ),
@@ -98,7 +95,7 @@ pleaseLogin() {
             color: CColors.whiteColor,
             borderRadius: BorderRadius.circular(16),
             margin: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
+            child: const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 // CContainer(

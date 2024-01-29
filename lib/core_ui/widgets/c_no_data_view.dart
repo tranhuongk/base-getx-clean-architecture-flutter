@@ -1,9 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-import '../../generated/assets.gen.dart';
 import '../../generated/locales.g.dart';
-import '../themes/c_colors.dart';
 import '../themes/c_text_styles.dart';
 import 'c_text.dart';
 

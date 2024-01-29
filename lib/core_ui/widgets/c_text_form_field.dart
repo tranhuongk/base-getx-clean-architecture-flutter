@@ -1,11 +1,8 @@
+import 'package:base_app_flutter/core_ui/core_ui.dart';
 import 'package:base_app_flutter/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import '../../generated/assets.gen.dart';
-import '../themes/c_colors.dart';
-import '../themes/c_text_styles.dart';
-import 'c_widget.dart';
 
 class CTextFormField extends StatefulWidget {
   final TextEditingController? controller;

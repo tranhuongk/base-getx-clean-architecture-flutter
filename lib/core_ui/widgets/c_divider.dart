@@ -1,7 +1,5 @@
+import 'package:base_app_flutter/core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
-
-import '../themes/c_colors.dart';
-import 'c_widget.dart';
 
 class HDivider extends CContainer {
   const HDivider({double height = 0.5, Color? color, Key? key})
